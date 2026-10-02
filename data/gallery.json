@@ -3,14 +3,15 @@
     {
       "id": "album-bmw-museum",
       "title": "BMW Museum",
-      "description": "תמונות מהביקור ב-BMW Museum במינכן, עם אופנועי Oktoberfest, רכבים קלאסיים ותצוגות בתוך המוזיאון.",
+      "description": "Photos from BMW Museum and BMW Welt in Munich: Oktoberfest-themed motorcycles, classic cars and indoor exhibition views.",
       "tags": [
         "BMW Museum",
+        "BMW Welt",
         "BMW",
-        "מינכן",
-        "אופנועים",
-        "רכבים קלאסיים",
-        "מוזיאון"
+        "Munich",
+        "Oktoberfest",
+        "motorcycles",
+        "classic cars"
       ],
       "people": [],
       "coverMediaId": "2026-10-02-bmw-motorcycle-001"
@@ -20,8 +21,8 @@
     {
       "id": "2026-10-02-bmw-motorcycle-001",
       "type": "image",
-      "title": "אופנוע BMW צבעוני ליד BMW Welt",
-      "description": "עצירה ליד BMW Welt במינכן עם אופנוע BMW צבעוני ברחבה, בדרך באזור אולימפיהפארק.",
+      "title": "Colorful BMW motorcycle outside BMW Welt",
+      "description": "A colorful BMW motorcycle displayed near BMW Welt in Munich, on the way around the Olympic Park area.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -32,12 +33,11 @@
       "tags": [
         "BMW",
         "BMW Welt",
-        "אופנוע",
-        "מינכן",
-        "אולימפיהפארק",
-        "טיול",
-        "גרמניה",
-        "BMW Museum"
+        "BMW Museum",
+        "motorcycle",
+        "Munich",
+        "Olympiapark",
+        "Germany"
       ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
@@ -49,8 +49,8 @@
     {
       "id": "2026-10-02-bmw-motorcycle-002",
       "type": "image",
-      "title": "עוד זווית על אופנוע האוקטוברפסט",
-      "description": "צילום רחב יותר של אופנוע BMW בעיצוב Oktoberfest מחוץ ל-BMW Welt במינכן.",
+      "title": "Wide view of the Oktoberfest motorcycle",
+      "description": "A wider angle of the Oktoberfest-styled BMW motorcycle outside BMW Welt in Munich.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -61,12 +61,11 @@
       "tags": [
         "BMW",
         "BMW Welt",
+        "BMW Museum",
         "Oktoberfest",
-        "אופנוע",
-        "מינכן",
-        "אולימפיהפארק",
-        "גרמניה",
-        "BMW Museum"
+        "motorcycle",
+        "Munich",
+        "Germany"
       ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
@@ -78,8 +77,8 @@
     {
       "id": "2026-10-02-bmw-motorcycle-003",
       "type": "image",
-      "title": "מבט מקרוב על אופנוע האוקטוברפסט",
-      "description": "צילום קרוב יותר של אופנוע BMW הצבעוני עם כיתוב Oktoberfest Munich ברחבת BMW Welt.",
+      "title": "Close view of the Oktoberfest motorcycle",
+      "description": "A close photo of the colorful BMW motorcycle with Oktoberfest Munich styling in the BMW Welt plaza.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -90,12 +89,11 @@
       "tags": [
         "BMW",
         "BMW Welt",
+        "BMW Museum",
         "Oktoberfest",
-        "אופנוע",
-        "מינכן",
-        "אולימפיהפארק",
-        "עיצוב צבעוני",
-        "BMW Museum"
+        "motorcycle",
+        "Munich",
+        "design"
       ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
@@ -107,8 +105,8 @@
     {
       "id": "2026-10-02-bmw-finish-escalator-004",
       "type": "image",
-      "title": "מדרגות נעות ליד שלט FINISH ב-BMW Welt",
-      "description": "מבט פנימי ב-BMW Welt עם שלט FINISH גדול, מדרגות נעות, קומות התצוגה ורכבי BMW קלאסיים מסביב.",
+      "title": "BMW Welt escalators near the FINISH sign",
+      "description": "An indoor view inside BMW Welt with a large FINISH sign, escalators, exhibition levels and classic BMW vehicles around the hall.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -119,13 +117,11 @@
       "tags": [
         "BMW",
         "BMW Welt",
+        "BMW Museum",
         "FINISH",
-        "מדרגות נעות",
-        "מינכן",
-        "אולימפיהפארק",
-        "מוזיאון",
-        "רכבים קלאסיים",
-        "BMW Museum"
+        "escalators",
+        "Munich",
+        "classic cars"
       ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
@@ -137,8 +133,8 @@
     {
       "id": "2026-10-02-bmw-classic-car-escalator-005",
       "type": "image",
-      "title": "מבט אל הרכב הקלאסי מעל המדרגות ב-BMW Welt",
-      "description": "זווית נוספת מתוך BMW Welt: מדרגות נעות, שילוט קומות, ורכב BMW קלאסי ירקרק בתצוגה מעל המעברים המעוגלים.",
+      "title": "Classic BMW car above the escalators",
+      "description": "Another angle inside BMW Welt: escalators, circular exhibition levels and a green classic BMW car on display.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -149,13 +145,11 @@
       "tags": [
         "BMW",
         "BMW Welt",
-        "מדרגות נעות",
-        "רכב קלאסי",
-        "מינכן",
-        "אולימפיהפארק",
-        "תצוגת רכבים",
-        "מוזיאון",
-        "BMW Museum"
+        "BMW Museum",
+        "escalators",
+        "classic car",
+        "Munich",
+        "exhibition"
       ],
       "createdAt": "2026-10-02T14:00:21+03:00",
       "files": {
@@ -167,8 +161,8 @@
     {
       "id": "2026-10-02-bmw-museum-portrait-006",
       "type": "image",
-      "title": "פורטרט ליד BMW Museum ואופנוע האוקטוברפסט",
-      "description": "צילום ברחבת BMW Museum במינכן עם אופנוע BMW צבעוני במיתוג Oktoberfest ומבנה המוזיאון ברקע.",
+      "title": "Portrait by the BMW Museum motorcycle",
+      "description": "A photo outside BMW Museum in Munich with the colorful Oktoberfest-themed BMW motorcycle and the museum building in the background.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -181,10 +175,9 @@
         "BMW Museum",
         "BMW Welt",
         "Oktoberfest",
-        "אופנוע",
-        "מינכן",
-        "פורטרט",
-        "גרמניה"
+        "motorcycle",
+        "portrait",
+        "Munich"
       ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
@@ -196,8 +189,8 @@
     {
       "id": "2026-10-02-bmw-escalator-portrait-007",
       "type": "image",
-      "title": "פורטרט על המדרגות הנעות ב-BMW Welt",
-      "description": "צילום בתוך BMW Welt במינכן: חבר מהקבוצה על מדרגות נעות, עם קומות התצוגה המעוגלות ורכב BMW קלאסי ירקרק ברקע.",
+      "title": "Portrait on the BMW Welt escalator",
+      "description": "A group member photographed on the escalators inside BMW Welt, with exhibition levels and a classic BMW car in the background.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -209,13 +202,10 @@
         "BMW",
         "BMW Welt",
         "BMW Museum",
-        "מינכן",
-        "מדרגות נעות",
-        "פורטרט",
-        "חבר בקבוצה",
-        "רכב קלאסי",
-        "מוזיאון",
-        "גרמניה"
+        "Munich",
+        "escalators",
+        "portrait",
+        "classic car"
       ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
@@ -227,8 +217,8 @@
     {
       "id": "2026-10-02-bmw-motorcycle-rider-008",
       "type": "image",
-      "title": "???? ?? ?????? Oktoberfest ?-BMW Museum",
-      "description": "????? ???? ??? BMW Museum ??????: ??? ??????? ???? ?? ?????? BMW ?????? ?????? Oktoberfest, ?? ???? ???????? ?????? ????.",
+      "title": "Sitting on the Oktoberfest motorcycle",
+      "description": "A portrait outside BMW Museum in Munich: a group member sitting on the colorful Oktoberfest-themed BMW motorcycle.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -241,11 +231,9 @@
         "BMW Museum",
         "BMW Welt",
         "Oktoberfest",
-        "??????",
-        "?????",
-        "??????",
-        "??? ??????",
-        "??????"
+        "motorcycle",
+        "portrait",
+        "Munich"
       ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
@@ -257,8 +245,8 @@
     {
       "id": "2026-10-02-bmw-motorcycle-rider-009",
       "type": "image",
-      "title": "????? ????? ?? ?????? Oktoberfest ?-BMW Museum",
-      "description": "??? ????? ?????? ?? BMW Museum ??????: ??? ??????? ??? ?????? BMW ?????? ?????? Oktoberfest, ?? ??? BMW ??????? ???????? ????.",
+      "title": "Another angle on the Oktoberfest motorcycle",
+      "description": "A second angle outside BMW Museum: a group member on the colorful BMW motorcycle, with the BMW building in the background.",
       "sender": {
         "displayName": "NadavS"
       },
@@ -271,12 +259,9 @@
         "BMW Museum",
         "BMW Welt",
         "Oktoberfest",
-        "??????",
-        "?????",
-        "??????",
-        "??? ??????",
-        "????",
-        "??????"
+        "motorcycle",
+        "portrait",
+        "Munich"
       ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
