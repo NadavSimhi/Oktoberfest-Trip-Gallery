@@ -1,66 +1,30 @@
 {
   "albums": [
     {
-      "id": "album-first-day",
-      "title": "יום ראשון במינכן",
-      "description": "נחיתה, אוכל ראשון בעיר והתארגנות לקראת המשחק.",
-      "tags": ["מינכן", "נחיתה", "אוכל"],
-      "people": ["נדב", "עדן", "יוסי"],
-      "coverMediaId": "sample-001"
-    },
-    {
-      "id": "album-basketball",
-      "title": "באיירן כדורסל",
-      "description": "הדרך ל-SAP Garden, אווירה, חטיפים ומשחק.",
-      "tags": ["כדורסל", "SAP Garden", "באיירן"],
-      "people": ["כולם"],
-      "coverMediaId": "sample-003"
-    },
-    {
-      "id": "album-food",
-      "title": "אוכל ושתייה",
-      "description": "כל המקומות שאכלנו בהם ומה ששווה לזכור.",
-      "tags": ["אוכל", "בירה", "מסעדות"],
-      "people": ["כולם"],
-      "coverMediaId": "sample-002"
+      "id": "album-bmw-welt",
+      "title": "BMW Welt ואולימפיהפארק",
+      "description": "עצירות ותמונות סביב BMW Welt, האולימפיהפארק והדרך לאזור המשחק.",
+      "tags": ["BMW Welt", "מינכן", "אופנועים", "אולימפיהפארק"],
+      "people": [],
+      "coverMediaId": "2026-10-02-bmw-motorcycle-001"
     }
   ],
   "media": [
     {
-      "id": "sample-001",
+      "id": "2026-10-02-bmw-motorcycle-001",
       "type": "image",
-      "title": "הגעה למרכז העיר",
-      "description": "תמונת פתיחה מהדרך הראשונה בעיר אחרי הנחיתה.",
+      "title": "אופנוע BMW צבעוני ליד BMW Welt",
+      "description": "עצירה ליד BMW Welt במינכן עם אופנוע BMW צבעוני ברחבה, בדרך באזור אולימפיהפארק.",
       "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-first-day"],
-      "people": ["נדב", "עדן"],
-      "tags": ["מינכן", "דרך", "פתיחה"],
-      "createdAt": "2026-10-02T09:15:00+03:00",
-      "files": {}
-    },
-    {
-      "id": "sample-002",
-      "type": "image",
-      "title": "עצירת אוכל",
-      "description": "שולחן אוכל קבוצתי עם שתייה ונשנושים לפני המשך היום.",
-      "sender": { "displayName": "אבישי" },
-      "albumIds": ["album-food"],
-      "people": ["כולם"],
-      "tags": ["אוכל", "בירה", "מסעדה"],
-      "createdAt": "2026-10-02T11:30:00+03:00",
-      "files": {}
-    },
-    {
-      "id": "sample-003",
-      "type": "video",
-      "title": "בדרך למשחק",
-      "description": "וידאו קצר מהדרך ל-SAP Garden והאווירה לפני המשחק.",
-      "sender": { "displayName": "אנדריי" },
-      "albumIds": ["album-basketball"],
-      "people": ["יוסי", "נדב"],
-      "tags": ["כדורסל", "SAP Garden", "באיירן"],
-      "createdAt": "2026-10-02T18:45:00+03:00",
-      "files": {}
+      "albumIds": ["album-bmw-welt"],
+      "people": [],
+      "tags": ["BMW", "BMW Welt", "אופנוע", "מינכן", "אולימפיהפארק", "טיול", "גרמניה"],
+      "createdAt": "2026-10-02T14:00:19+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg",
+        "web": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg",
+        "thumb": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg"
+      }
     }
   ]
 }
