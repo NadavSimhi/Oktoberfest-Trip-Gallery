@@ -89,6 +89,22 @@
         "web": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg",
         "thumb": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg"
       }
+    },
+    {
+      "id": "2026-10-02-bmw-museum-portrait-006",
+      "type": "image",
+      "title": "פורטרט ליד BMW Museum ואופנוע האוקטוברפסט",
+      "description": "צילום ברחבת BMW Museum במינכן עם אופנוע BMW צבעוני במיתוג Oktoberfest ומבנה המוזיאון ברקע.",
+      "sender": { "displayName": "NadavS" },
+      "albumIds": ["album-bmw-welt"],
+      "people": [],
+      "tags": ["BMW", "BMW Museum", "BMW Welt", "Oktoberfest", "אופנוע", "מינכן", "פורטרט", "גרמניה"],
+      "createdAt": "2026-10-02T14:00:20+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg",
+        "web": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg",
+        "thumb": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg"
+      }
     }
   ]
 }
