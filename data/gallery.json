@@ -332,8 +332,8 @@
     {
       "id": "2026-10-03-rice-garden-table-011",
       "type": "image",
-      "title": "Friends at Rice Garden",
-      "description": "A candid restaurant moment at Rice Garden after the basketball game, with friends around the table by the window.",
+      "title": "The drunk and the scaffolding",
+      "description": "The drunk and the scaffolding: a candid Rice Garden moment after the basketball game, with friends around the table by the window.",
       "sender": {
         "displayName": "אבישי"
       },
@@ -348,7 +348,10 @@
         "friends",
         "Munich",
         "after game",
-        "dinner"
+        "dinner",
+        "drunk",
+        "scaffolding",
+        "השיכור והפיגומים"
       ],
       "createdAt": "2026-10-03T00:42:45+03:00",
       "files": {
