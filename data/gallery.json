@@ -73,6 +73,22 @@
         "web": "./media/2026-10-02/bmw-welt-finish-escalator.jpg",
         "thumb": "./media/2026-10-02/bmw-welt-finish-escalator.jpg"
       }
+    },
+    {
+      "id": "2026-10-02-bmw-classic-car-escalator-005",
+      "type": "image",
+      "title": "מבט אל הרכב הקלאסי מעל המדרגות ב-BMW Welt",
+      "description": "זווית נוספת מתוך BMW Welt: מדרגות נעות, שילוט קומות, ורכב BMW קלאסי ירקרק בתצוגה מעל המעברים המעוגלים.",
+      "sender": { "displayName": "NadavS" },
+      "albumIds": ["album-bmw-welt"],
+      "people": [],
+      "tags": ["BMW", "BMW Welt", "מדרגות נעות", "רכב קלאסי", "מינכן", "אולימפיהפארק", "תצוגת רכבים", "מוזיאון"],
+      "createdAt": "2026-10-02T14:00:21+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg",
+        "web": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg",
+        "thumb": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg"
+      }
     }
   ]
 }
