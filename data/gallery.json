@@ -57,6 +57,22 @@
         "web": "./media/2026-10-02/bmw-welt-oktoberfest-motorcycle-close.jpg",
         "thumb": "./media/2026-10-02/bmw-welt-oktoberfest-motorcycle-close.jpg"
       }
+    },
+    {
+      "id": "2026-10-02-bmw-finish-escalator-004",
+      "type": "image",
+      "title": "מדרגות נעות ליד שלט FINISH ב-BMW Welt",
+      "description": "מבט פנימי ב-BMW Welt עם שלט FINISH גדול, מדרגות נעות, קומות התצוגה ורכבי BMW קלאסיים מסביב.",
+      "sender": { "displayName": "NadavS" },
+      "albumIds": ["album-bmw-welt"],
+      "people": [],
+      "tags": ["BMW", "BMW Welt", "FINISH", "מדרגות נעות", "מינכן", "אולימפיהפארק", "מוזיאון", "רכבים קלאסיים"],
+      "createdAt": "2026-10-02T14:00:20+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-welt-finish-escalator.jpg",
+        "web": "./media/2026-10-02/bmw-welt-finish-escalator.jpg",
+        "thumb": "./media/2026-10-02/bmw-welt-finish-escalator.jpg"
+      }
     }
   ]
 }
