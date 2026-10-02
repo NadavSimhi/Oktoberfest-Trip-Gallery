@@ -3,90 +3,67 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Shared trip gallery with albums, WhatsApp media, searchable captions and manual people tags."
-    />
+    <meta name="description" content="Shared trip gallery." />
     <title>Oktoberfest Trip Gallery</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Oktoberfest Trip</p>
-        <h1>Gallery</h1>
-      </div>
-      <button class="search-button" id="searchFab" type="button" aria-label="Open search">
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path
-            d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
-    </header>
-
     <main>
-      <section class="filter-strip" aria-label="Gallery filters">
-        <select id="albumFilter" aria-label="Album filter"></select>
-        <select id="senderFilter" aria-label="Sender filter"></select>
-        <select id="personFilter" aria-label="Person filter"></select>
-        <button class="text-button" id="clearFilters" type="button">Clear</button>
+      <section class="view is-active" id="timelineView" aria-label="Timeline"></section>
+      <section class="view" id="galleryView" aria-label="Gallery">
+        <div class="album-strip" id="albumGrid" aria-label="Albums"></div>
+        <section class="media-grid" id="mediaGrid" aria-live="polite"></section>
       </section>
-
-      <section class="album-strip" id="albumGrid" aria-label="Albums"></section>
-
-      <section class="gallery-head">
-        <p id="resultSummary">Loading media</p>
+      <section class="view" id="peopleView" aria-label="People"></section>
+      <section class="view" id="searchView" aria-label="Search">
+        <div class="search-wrap">
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            placeholder="Search"
+            aria-label="Search gallery"
+          />
+          <div class="quick-tags" id="quickTags"></div>
+          <section class="media-grid" id="searchGrid" aria-live="polite"></section>
+        </div>
       </section>
-      <section class="media-grid" id="mediaGrid" aria-live="polite"></section>
     </main>
 
-    <aside class="search-panel" id="searchPanel" aria-hidden="true">
-      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
-        <div class="sheet-head">
-          <h2 id="searchTitle">Search gallery</h2>
-          <button id="closeSearch" class="icon-button" type="button" aria-label="Close search">
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <path
-                d="m18 6-12 12M6 6l12 12"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-        <input
-          id="searchInput"
-          type="search"
-          autocomplete="off"
-          placeholder="Search sender, person, album, tag or caption"
-        />
-        <div class="quick-tags" id="quickTags"></div>
-      </div>
-    </aside>
+    <nav class="bottom-nav" aria-label="Gallery navigation">
+      <button class="nav-item is-active" type="button" data-view="timeline">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+        </svg>
+        <span>Timeline</span>
+      </button>
+      <button class="nav-item" type="button" data-view="gallery">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+        <span>Gallery</span>
+      </button>
+      <button class="nav-item" type="button" data-view="people">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M16 11a4 4 0 1 0-8 0M4 20a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+        </svg>
+        <span>People</span>
+      </button>
+      <button class="nav-item" type="button" data-view="search">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+        </svg>
+        <span>Search</span>
+      </button>
+    </nav>
 
     <aside class="detail-panel" id="detailPanel" aria-hidden="true">
       <div class="detail-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-        <div class="detail-toolbar">
-          <button id="closeDetail" class="icon-button" type="button" aria-label="Close details">
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <path
-                d="m18 6-12 12M6 6l12 12"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
+        <button id="closeDetail" class="close-button" type="button" aria-label="Close details">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m18 6-12 12M6 6l12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+          </svg>
+        </button>
         <div class="detail-media" id="detailMedia"></div>
         <div class="detail-content">
           <p class="media-meta" id="detailMeta"></p>
@@ -97,10 +74,6 @@
         </div>
       </div>
     </aside>
-
-    <template id="albumTemplate">
-      <button class="album-pill" type="button"></button>
-    </template>
 
     <template id="mediaTemplate">
       <article class="media-card">

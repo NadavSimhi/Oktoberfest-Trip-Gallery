@@ -1,25 +1,22 @@
-const fallbackGallery = { albums: [], media: [] };
-
 const state = {
-  gallery: fallbackGallery,
+  gallery: { albums: [], media: [] },
+  view: "timeline",
   query: "",
   album: "all",
-  sender: "all",
-  person: "all",
 };
 
 const els = {
-  albumFilter: document.querySelector("#albumFilter"),
-  senderFilter: document.querySelector("#senderFilter"),
-  personFilter: document.querySelector("#personFilter"),
-  clearFilters: document.querySelector("#clearFilters"),
+  views: {
+    timeline: document.querySelector("#timelineView"),
+    gallery: document.querySelector("#galleryView"),
+    people: document.querySelector("#peopleView"),
+    search: document.querySelector("#searchView"),
+  },
+  navItems: [...document.querySelectorAll(".nav-item")],
   albumGrid: document.querySelector("#albumGrid"),
   mediaGrid: document.querySelector("#mediaGrid"),
-  resultSummary: document.querySelector("#resultSummary"),
-  searchFab: document.querySelector("#searchFab"),
-  searchPanel: document.querySelector("#searchPanel"),
-  closeSearch: document.querySelector("#closeSearch"),
   searchInput: document.querySelector("#searchInput"),
+  searchGrid: document.querySelector("#searchGrid"),
   quickTags: document.querySelector("#quickTags"),
   detailPanel: document.querySelector("#detailPanel"),
   closeDetail: document.querySelector("#closeDetail"),
@@ -29,7 +26,6 @@ const els = {
   detailMeta: document.querySelector("#detailMeta"),
   detailList: document.querySelector("#detailList"),
   detailTags: document.querySelector("#detailTags"),
-  albumTemplate: document.querySelector("#albumTemplate"),
   mediaTemplate: document.querySelector("#mediaTemplate"),
 };
 
@@ -39,11 +35,10 @@ async function loadGallery() {
     if (!response.ok) throw new Error(`gallery.json ${response.status}`);
     state.gallery = normalizeGallery(await response.json());
   } catch {
-    state.gallery = fallbackGallery;
+    state.gallery = { albums: [], media: [] };
   }
 
-  populateFilters();
-  render();
+  renderAll();
 }
 
 function normalizeGallery(data) {
@@ -53,34 +48,96 @@ function normalizeGallery(data) {
   };
 }
 
-function uniqueSorted(values) {
-  return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+function renderAll() {
+  renderTimeline();
+  renderGallery();
+  renderPeople();
+  renderSearch();
+  switchView(state.view);
 }
 
-function populateSelect(select, label, values) {
-  select.innerHTML = "";
-  select.append(new Option(label, "all"));
-  values.forEach((value) => select.append(new Option(value, value)));
+function sortedMedia() {
+  return [...state.gallery.media].sort((a, b) => {
+    const aTime = new Date(a.createdAt || 0).getTime();
+    const bTime = new Date(b.createdAt || 0).getTime();
+    return bTime - aTime;
+  });
 }
 
-function populateFilters() {
-  populateSelect(
-    els.albumFilter,
-    "All albums",
-    uniqueSorted(state.gallery.albums.map((album) => album.title)),
-  );
-  populateSelect(
-    els.senderFilter,
-    "All senders",
-    uniqueSorted(state.gallery.media.map((item) => item.sender?.displayName)),
-  );
-  populateSelect(
-    els.personFilter,
-    "All people",
-    uniqueSorted(state.gallery.media.flatMap((item) => item.people || [])),
-  );
+function renderTimeline() {
+  const media = sortedMedia();
+  els.views.timeline.innerHTML = "";
 
-  const tags = uniqueSorted(state.gallery.media.flatMap((item) => item.tags || [])).slice(0, 14);
+  const groups = groupByDate(media);
+  Object.entries(groups).forEach(([date, items]) => {
+    const group = document.createElement("section");
+    group.className = "timeline-group";
+    const strip = document.createElement("div");
+    strip.className = "media-grid";
+    group.append(createTinyLabel(date), strip);
+    renderMediaInto(strip, items);
+    els.views.timeline.append(group);
+  });
+}
+
+function renderGallery() {
+  const media = state.album === "all" ? sortedMedia() : sortedMedia().filter((item) => albumNames(item.albumIds).includes(state.album));
+  renderAlbums();
+  renderMediaInto(els.mediaGrid, media);
+}
+
+function renderAlbums() {
+  els.albumGrid.innerHTML = "";
+  const all = document.createElement("button");
+  all.className = `album-pill ${state.album === "all" ? "is-active" : ""}`;
+  all.type = "button";
+  all.textContent = `All (${state.gallery.media.length})`;
+  all.addEventListener("click", () => {
+    state.album = "all";
+    renderGallery();
+  });
+  els.albumGrid.append(all);
+
+  state.gallery.albums.forEach((album) => {
+    const count = state.gallery.media.filter((item) => (item.albumIds || []).includes(album.id)).length;
+    const button = document.createElement("button");
+    button.className = `album-pill ${state.album === album.title ? "is-active" : ""}`;
+    button.type = "button";
+    button.textContent = `${album.title} (${count})`;
+    button.addEventListener("click", () => {
+      state.album = album.title;
+      renderGallery();
+    });
+    els.albumGrid.append(button);
+  });
+}
+
+function renderPeople() {
+  els.views.people.innerHTML = "";
+  const people = uniqueSorted(state.gallery.media.flatMap((item) => item.people || []));
+
+  if (!people.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.textContent = "No people tags yet";
+    els.views.people.append(empty);
+    return;
+  }
+
+  people.forEach((person) => {
+    const items = sortedMedia().filter((item) => (item.people || []).includes(person));
+    const group = document.createElement("section");
+    group.className = "timeline-group";
+    const strip = document.createElement("div");
+    strip.className = "media-grid";
+    group.append(createTinyLabel(`${person} (${items.length})`), strip);
+    renderMediaInto(strip, items);
+    els.views.people.append(group);
+  });
+}
+
+function renderSearch() {
+  const tags = uniqueSorted(state.gallery.media.flatMap((item) => item.tags || [])).slice(0, 16);
   els.quickTags.innerHTML = "";
   tags.forEach((tag) => {
     const button = document.createElement("button");
@@ -89,80 +146,27 @@ function populateFilters() {
     button.addEventListener("click", () => {
       state.query = tag;
       els.searchInput.value = tag;
-      closeSearch();
-      render();
+      renderSearchResults();
     });
     els.quickTags.append(button);
   });
+  renderSearchResults();
 }
 
-function albumNames(albumIds = []) {
-  return albumIds
-    .map((id) => state.gallery.albums.find((album) => album.id === id)?.title)
-    .filter(Boolean);
-}
-
-function mediaSearchText(item) {
-  return [
-    item.title,
-    item.description,
-    item.sender?.displayName,
-    ...(item.people || []),
-    ...(item.tags || []),
-    ...albumNames(item.albumIds),
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-}
-
-function filteredMedia() {
+function renderSearchResults() {
   const query = state.query.trim().toLowerCase();
-  return state.gallery.media.filter((item) => {
-    const itemAlbumNames = albumNames(item.albumIds);
-    const matchesQuery = !query || mediaSearchText(item).includes(query);
-    const matchesAlbum = state.album === "all" || itemAlbumNames.includes(state.album);
-    const matchesSender = state.sender === "all" || item.sender?.displayName === state.sender;
-    const matchesPerson = state.person === "all" || (item.people || []).includes(state.person);
-    return matchesQuery && matchesAlbum && matchesSender && matchesPerson;
-  });
+  const media = !query ? sortedMedia() : sortedMedia().filter((item) => mediaSearchText(item).includes(query));
+  renderMediaInto(els.searchGrid, media);
 }
 
-function render() {
-  const media = filteredMedia();
-  renderAlbums(media);
-  renderMedia(media);
-  els.resultSummary.textContent =
-    media.length === state.gallery.media.length
-      ? `${state.gallery.media.length} items`
-      : `${media.length} of ${state.gallery.media.length} items`;
-}
-
-function renderAlbums(visibleMedia) {
-  const visibleIds = new Set(visibleMedia.flatMap((item) => item.albumIds || []));
-  const albums = state.gallery.albums.filter((album) => visibleIds.has(album.id) || visibleMedia.length === 0);
-
-  els.albumGrid.innerHTML = "";
-  albums.forEach((album) => {
-    const node = els.albumTemplate.content.cloneNode(true);
-    const button = node.querySelector(".album-pill");
-    const count = state.gallery.media.filter((item) => (item.albumIds || []).includes(album.id)).length;
-    button.textContent = `${album.title} (${count})`;
-    button.classList.toggle("is-active", state.album === album.title);
-    button.addEventListener("click", () => {
-      state.album = state.album === album.title ? "all" : album.title;
-      els.albumFilter.value = state.album;
-      render();
-    });
-    els.albumGrid.append(button);
-  });
-}
-
-function renderMedia(media) {
-  els.mediaGrid.innerHTML = "";
+function renderMediaInto(container, media) {
+  container.innerHTML = "";
 
   if (!media.length) {
-    els.mediaGrid.innerHTML = `<div class="empty-state">No matching media found.</div>`;
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.textContent = "No media";
+    container.append(empty);
     return;
   }
 
@@ -173,21 +177,40 @@ function renderMedia(media) {
     const thumb = node.querySelector(".thumb");
     const file = item.files?.thumb || item.files?.web || item.files?.original;
 
-    button.setAttribute("aria-label", `Open ${item.title || "media item"}`);
+    button.setAttribute("aria-label", item.title || "Open media");
     if (file) {
       thumb.style.backgroundImage = `url("${file}")`;
     } else {
       thumb.classList.add("is-missing");
       thumb.textContent = item.type === "video" ? "Video" : "Photo";
     }
-
-    if (item.type === "video") {
-      card.classList.add("is-video");
-    }
-
+    if (item.type === "video") card.classList.add("is-video");
     button.addEventListener("click", () => openDetail(item));
-    els.mediaGrid.append(card);
+    container.append(card);
   });
+}
+
+function switchView(view) {
+  state.view = view;
+  Object.entries(els.views).forEach(([name, el]) => el.classList.toggle("is-active", name === view));
+  els.navItems.forEach((button) => button.classList.toggle("is-active", button.dataset.view === view));
+  if (view === "search") els.searchInput.focus();
+}
+
+function groupByDate(media) {
+  return media.reduce((groups, item) => {
+    const date = formatDay(item.createdAt);
+    groups[date] ||= [];
+    groups[date].push(item);
+    return groups;
+  }, {});
+}
+
+function createTinyLabel(text) {
+  const label = document.createElement("p");
+  label.className = "tiny-label";
+  label.textContent = text;
+  return label;
 }
 
 function openDetail(item) {
@@ -210,12 +233,11 @@ function openDetail(item) {
   }
 
   els.detailTitle.textContent = item.title || "Untitled";
-  els.detailDescription.textContent = item.description || "No description yet.";
-  els.detailMeta.textContent = `${item.sender?.displayName || "Unknown sender"} · ${formatDate(item.createdAt)}`;
+  els.detailDescription.textContent = item.description || "";
+  els.detailMeta.textContent = `${item.sender?.displayName || "Unknown"} · ${formatDate(item.createdAt)}`;
   els.detailList.innerHTML = "";
   addDetail("Albums", albumNames(item.albumIds).join(", ") || "None");
-  addDetail("People", (item.people || []).join(", ") || "Not tagged yet");
-  addDetail("Type", item.type || "image");
+  addDetail("People", (item.people || []).join(", ") || "Not tagged");
 
   els.detailTags.innerHTML = "";
   (item.tags || []).forEach((tag) => {
@@ -227,7 +249,8 @@ function openDetail(item) {
       state.query = tag;
       els.searchInput.value = tag;
       closeDetail();
-      render();
+      switchView("search");
+      renderSearchResults();
     });
     els.detailTags.append(chip);
   });
@@ -250,9 +273,38 @@ function closeDetail() {
   els.detailMedia.innerHTML = "";
 }
 
+function albumNames(albumIds = []) {
+  return albumIds
+    .map((id) => state.gallery.albums.find((album) => album.id === id)?.title)
+    .filter(Boolean);
+}
+
+function mediaSearchText(item) {
+  return [
+    item.title,
+    item.description,
+    item.sender?.displayName,
+    ...(item.people || []),
+    ...(item.tags || []),
+    ...albumNames(item.albumIds),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function uniqueSorted(values) {
+  return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+}
+
+function formatDay(value) {
+  const date = new Date(value || 0);
+  if (Number.isNaN(date.getTime())) return "No date";
+  return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short" }).format(date);
+}
+
 function formatDate(value) {
-  if (!value) return "No date";
-  const date = new Date(value);
+  const date = new Date(value || 0);
   if (Number.isNaN(date.getTime())) return "No date";
   return new Intl.DateTimeFormat("en-GB", {
     day: "2-digit",
@@ -262,52 +314,13 @@ function formatDate(value) {
   }).format(date);
 }
 
-function openSearch() {
-  els.searchPanel.classList.add("is-open");
-  els.searchPanel.setAttribute("aria-hidden", "false");
-  els.searchInput.focus();
-}
-
-function closeSearch() {
-  els.searchPanel.classList.remove("is-open");
-  els.searchPanel.setAttribute("aria-hidden", "true");
-}
-
-els.albumFilter.addEventListener("change", (event) => {
-  state.album = event.target.value;
-  render();
+els.navItems.forEach((button) => {
+  button.addEventListener("click", () => switchView(button.dataset.view));
 });
 
-els.senderFilter.addEventListener("change", (event) => {
-  state.sender = event.target.value;
-  render();
-});
-
-els.personFilter.addEventListener("change", (event) => {
-  state.person = event.target.value;
-  render();
-});
-
-els.clearFilters.addEventListener("click", () => {
-  state.query = "";
-  state.album = "all";
-  state.sender = "all";
-  state.person = "all";
-  els.searchInput.value = "";
-  els.albumFilter.value = "all";
-  els.senderFilter.value = "all";
-  els.personFilter.value = "all";
-  render();
-});
-
-els.searchFab.addEventListener("click", openSearch);
-els.closeSearch.addEventListener("click", closeSearch);
-els.searchPanel.addEventListener("click", (event) => {
-  if (event.target === els.searchPanel) closeSearch();
-});
 els.searchInput.addEventListener("input", (event) => {
   state.query = event.target.value;
-  render();
+  renderSearchResults();
 });
 
 els.closeDetail.addEventListener("click", closeDetail);
@@ -316,14 +329,7 @@ els.detailPanel.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeSearch();
-    closeDetail();
-  }
-  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
-    event.preventDefault();
-    openSearch();
-  }
+  if (event.key === "Escape") closeDetail();
 });
 
 loadGallery();
