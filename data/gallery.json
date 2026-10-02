@@ -30,6 +30,21 @@
       ],
       "people": [],
       "coverMediaId": "2026-10-02-sap-garden-game-selfie-010"
+    },
+    {
+      "id": "album-rice-garden",
+      "title": "Rice Garden",
+      "description": "Photos from the Vietnamese restaurant stop near SAP Garden after the game.",
+      "tags": [
+        "Rice Garden",
+        "Vietnamese restaurant",
+        "restaurant",
+        "dinner",
+        "Munich",
+        "friends"
+      ],
+      "people": [],
+      "coverMediaId": "2026-10-03-rice-garden-table-011"
     }
   ],
   "media": [
@@ -312,6 +327,34 @@
         "original": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg",
         "web": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg",
         "thumb": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg"
+      }
+    },
+    {
+      "id": "2026-10-03-rice-garden-table-011",
+      "type": "image",
+      "title": "Friends at Rice Garden",
+      "description": "A candid restaurant moment at Rice Garden after the basketball game, with friends around the table by the window.",
+      "sender": {
+        "displayName": "אבישי"
+      },
+      "albumIds": [
+        "album-rice-garden"
+      ],
+      "people": [],
+      "tags": [
+        "Rice Garden",
+        "Vietnamese restaurant",
+        "restaurant",
+        "friends",
+        "Munich",
+        "after game",
+        "dinner"
+      ],
+      "createdAt": "2026-10-03T00:42:45+03:00",
+      "files": {
+        "original": "./media/2026-10-03/rice-garden-friends-table-011.jpg",
+        "web": "./media/2026-10-03/rice-garden-friends-table-011.jpg",
+        "thumb": "./media/2026-10-03/rice-garden-friends-table-011.jpg"
       }
     }
   ]
