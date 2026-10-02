@@ -215,6 +215,7 @@ function createTinyLabel(text) {
 
 function openDetail(item) {
   const file = item.files?.web || item.files?.original || item.files?.thumb;
+  els.detailPanel.querySelector(".detail-card")?.classList.remove("show-info");
   els.detailMedia.innerHTML = "";
 
   if (file && item.type === "video") {
@@ -270,7 +271,12 @@ function addDetail(label, value) {
 function closeDetail() {
   els.detailPanel.classList.remove("is-open");
   els.detailPanel.setAttribute("aria-hidden", "true");
+  els.detailPanel.querySelector(".detail-card")?.classList.remove("show-info");
   els.detailMedia.innerHTML = "";
+}
+
+function toggleDetailInfo() {
+  els.detailPanel.querySelector(".detail-card")?.classList.toggle("show-info");
 }
 
 function albumNames(albumIds = []) {
@@ -324,6 +330,7 @@ els.searchInput.addEventListener("input", (event) => {
 });
 
 els.closeDetail.addEventListener("click", closeDetail);
+els.detailMedia.addEventListener("click", toggleDetailInfo);
 els.detailPanel.addEventListener("click", (event) => {
   if (event.target === els.detailPanel) closeDetail();
 });
