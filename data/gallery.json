@@ -15,6 +15,21 @@
       ],
       "people": [],
       "coverMediaId": "2026-10-02-bmw-motorcycle-001"
+    },
+    {
+      "id": "album-basketball-game",
+      "title": "Basketball game",
+      "description": "Photos from the Bayern Munich basketball game at SAP Garden.",
+      "tags": [
+        "Basketball",
+        "Bayern Munich",
+        "SAP Garden",
+        "EuroLeague",
+        "Munich",
+        "game"
+      ],
+      "people": [],
+      "coverMediaId": "2026-10-02-sap-garden-game-selfie-010"
     }
   ],
   "media": [
@@ -268,6 +283,35 @@
         "original": "./media/2026-10-02/bmw-museum-motorcycle-rider-009.jpg",
         "web": "./media/2026-10-02/bmw-museum-motorcycle-rider-009.jpg",
         "thumb": "./media/2026-10-02/bmw-museum-motorcycle-rider-009.jpg"
+      }
+    },
+    {
+      "id": "2026-10-02-sap-garden-game-selfie-010",
+      "type": "image",
+      "title": "Selfie from the Bayern basketball game",
+      "description": "A selfie from the stands during the Bayern Munich basketball game at SAP Garden, with the court and crowd in the background.",
+      "sender": {
+        "displayName": "יוסי"
+      },
+      "albumIds": [
+        "album-basketball-game"
+      ],
+      "people": [],
+      "tags": [
+        "Basketball",
+        "Bayern Munich",
+        "SAP Garden",
+        "EuroLeague",
+        "Munich",
+        "game",
+        "selfie",
+        "crowd"
+      ],
+      "createdAt": "2026-10-02T21:15:30+03:00",
+      "files": {
+        "original": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg",
+        "web": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg",
+        "thumb": "./media/2026-10-02/sap-garden-bayern-game-selfie-010.jpg"
       }
     }
   ]
