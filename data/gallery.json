@@ -25,6 +25,22 @@
         "web": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg",
         "thumb": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg"
       }
+    },
+    {
+      "id": "2026-10-02-bmw-motorcycle-002",
+      "type": "image",
+      "title": "עוד זווית על אופנוע האוקטוברפסט",
+      "description": "צילום רחב יותר של אופנוע BMW בעיצוב Oktoberfest מחוץ ל-BMW Welt במינכן.",
+      "sender": { "displayName": "NadavS" },
+      "albumIds": ["album-bmw-welt"],
+      "people": [],
+      "tags": ["BMW", "BMW Welt", "Oktoberfest", "אופנוע", "מינכן", "אולימפיהפארק", "גרמניה"],
+      "createdAt": "2026-10-02T14:00:19+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-welt-colorful-motorcycle-wide.jpg",
+        "web": "./media/2026-10-02/bmw-welt-colorful-motorcycle-wide.jpg",
+        "thumb": "./media/2026-10-02/bmw-welt-colorful-motorcycle-wide.jpg"
+      }
     }
   ]
 }
