@@ -4,7 +4,12 @@
       "id": "album-bmw-welt",
       "title": "BMW Welt ואולימפיהפארק",
       "description": "עצירות ותמונות סביב BMW Welt, האולימפיהפארק והדרך לאזור המשחק.",
-      "tags": ["BMW Welt", "מינכן", "אופנועים", "אולימפיהפארק"],
+      "tags": [
+        "BMW Welt",
+        "מינכן",
+        "אופנועים",
+        "אולימפיהפארק"
+      ],
       "people": [],
       "coverMediaId": "2026-10-02-bmw-motorcycle-001"
     }
@@ -15,10 +20,22 @@
       "type": "image",
       "title": "אופנוע BMW צבעוני ליד BMW Welt",
       "description": "עצירה ליד BMW Welt במינכן עם אופנוע BMW צבעוני ברחבה, בדרך באזור אולימפיהפארק.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Welt", "אופנוע", "מינכן", "אולימפיהפארק", "טיול", "גרמניה"],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "אופנוע",
+        "מינכן",
+        "אולימפיהפארק",
+        "טיול",
+        "גרמניה"
+      ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-welt-colorful-motorcycle.jpg",
@@ -31,10 +48,22 @@
       "type": "image",
       "title": "עוד זווית על אופנוע האוקטוברפסט",
       "description": "צילום רחב יותר של אופנוע BMW בעיצוב Oktoberfest מחוץ ל-BMW Welt במינכן.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Welt", "Oktoberfest", "אופנוע", "מינכן", "אולימפיהפארק", "גרמניה"],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "Oktoberfest",
+        "אופנוע",
+        "מינכן",
+        "אולימפיהפארק",
+        "גרמניה"
+      ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-welt-colorful-motorcycle-wide.jpg",
@@ -47,10 +76,22 @@
       "type": "image",
       "title": "מבט מקרוב על אופנוע האוקטוברפסט",
       "description": "צילום קרוב יותר של אופנוע BMW הצבעוני עם כיתוב Oktoberfest Munich ברחבת BMW Welt.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Welt", "Oktoberfest", "אופנוע", "מינכן", "אולימפיהפארק", "עיצוב צבעוני"],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "Oktoberfest",
+        "אופנוע",
+        "מינכן",
+        "אולימפיהפארק",
+        "עיצוב צבעוני"
+      ],
       "createdAt": "2026-10-02T14:00:19+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-welt-oktoberfest-motorcycle-close.jpg",
@@ -63,10 +104,23 @@
       "type": "image",
       "title": "מדרגות נעות ליד שלט FINISH ב-BMW Welt",
       "description": "מבט פנימי ב-BMW Welt עם שלט FINISH גדול, מדרגות נעות, קומות התצוגה ורכבי BMW קלאסיים מסביב.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Welt", "FINISH", "מדרגות נעות", "מינכן", "אולימפיהפארק", "מוזיאון", "רכבים קלאסיים"],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "FINISH",
+        "מדרגות נעות",
+        "מינכן",
+        "אולימפיהפארק",
+        "מוזיאון",
+        "רכבים קלאסיים"
+      ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-welt-finish-escalator.jpg",
@@ -79,10 +133,23 @@
       "type": "image",
       "title": "מבט אל הרכב הקלאסי מעל המדרגות ב-BMW Welt",
       "description": "זווית נוספת מתוך BMW Welt: מדרגות נעות, שילוט קומות, ורכב BMW קלאסי ירקרק בתצוגה מעל המעברים המעוגלים.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Welt", "מדרגות נעות", "רכב קלאסי", "מינכן", "אולימפיהפארק", "תצוגת רכבים", "מוזיאון"],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "מדרגות נעות",
+        "רכב קלאסי",
+        "מינכן",
+        "אולימפיהפארק",
+        "תצוגת רכבים",
+        "מוזיאון"
+      ],
       "createdAt": "2026-10-02T14:00:21+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-welt-classic-car-escalator.jpg",
@@ -95,15 +162,59 @@
       "type": "image",
       "title": "פורטרט ליד BMW Museum ואופנוע האוקטוברפסט",
       "description": "צילום ברחבת BMW Museum במינכן עם אופנוע BMW צבעוני במיתוג Oktoberfest ומבנה המוזיאון ברקע.",
-      "sender": { "displayName": "NadavS" },
-      "albumIds": ["album-bmw-welt"],
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
       "people": [],
-      "tags": ["BMW", "BMW Museum", "BMW Welt", "Oktoberfest", "אופנוע", "מינכן", "פורטרט", "גרמניה"],
+      "tags": [
+        "BMW",
+        "BMW Museum",
+        "BMW Welt",
+        "Oktoberfest",
+        "אופנוע",
+        "מינכן",
+        "פורטרט",
+        "גרמניה"
+      ],
       "createdAt": "2026-10-02T14:00:20+03:00",
       "files": {
         "original": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg",
         "web": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg",
         "thumb": "./media/2026-10-02/bmw-museum-portrait-motorcycle.jpg"
+      }
+    },
+    {
+      "id": "2026-10-02-bmw-escalator-portrait-007",
+      "type": "image",
+      "title": "פורטרט על המדרגות הנעות ב-BMW Welt",
+      "description": "צילום בתוך BMW Welt במינכן: חבר מהקבוצה על מדרגות נעות, עם קומות התצוגה המעוגלות ורכב BMW קלאסי ירקרק ברקע.",
+      "sender": {
+        "displayName": "NadavS"
+      },
+      "albumIds": [
+        "album-bmw-welt"
+      ],
+      "people": [],
+      "tags": [
+        "BMW",
+        "BMW Welt",
+        "BMW Museum",
+        "מינכן",
+        "מדרגות נעות",
+        "פורטרט",
+        "חבר בקבוצה",
+        "רכב קלאסי",
+        "מוזיאון",
+        "גרמניה"
+      ],
+      "createdAt": "2026-10-02T14:00:20+03:00",
+      "files": {
+        "original": "./media/2026-10-02/bmw-welt-escalator-portrait-007.jpg",
+        "web": "./media/2026-10-02/bmw-welt-escalator-portrait-007.jpg",
+        "thumb": "./media/2026-10-02/bmw-welt-escalator-portrait-007.jpg"
       }
     }
   ]
